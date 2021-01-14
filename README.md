@@ -6,5 +6,5 @@ As a person who is hard of hearing, I want to sign out my words converted to sou
 **End user goal**:<br/>
 Sign language interpreted by camera and returned as written and vocalized characters.<br/><br/> 
 **End business goal**:<br/> Camera access. Oxford Dictionary API.<br/><br/>
-**Acceptance criteria**:<br/> Track hand motion and nuances. Refer to American Sign Language Alphabet. Refer to Oxford Dictionary API. Return written characters. Return vocal versions of signed characters.
+**Acceptance criteria**:<br/> Track hand motion and nuances. Refer to American Sign Language Alphabet. Refer to Oxford Dictionary API. Return written characters. Return vocal versions of signed characters.<br/><br/>
 ![Tri-Sense Mockup](/tri-sense_mockup.png)
