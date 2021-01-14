@@ -17,13 +17,9 @@ export default function Merriam() {
 
     useEffect(() => {
 
-        const searchWord = currentWord;
-        const Merriam = Merriam_URL;
-        const API = API_KEY;
-
         async function GetEnglishWord() {
             try {
-            const res = await axios.get(Merriam + searchWord + API, {
+            const res = await axios.get(Merriam_URL + "apple" + API_KEY, {
                     timeout: 2000,
                     })
                 console.log(res.data);
@@ -31,14 +27,13 @@ export default function Merriam() {
             } catch (err) {
                 console.error(err);
             } finally {
-                console.log("A Merriam Webster Dictionary API GET call attempt was made")
-            }
-            
+                console.log("An initial Merriam Webster Dictionary API GET call attempt was made")
+            }    
         }
 
         GetEnglishWord();
 
-    }, [Merriam_URL, API_KEY, currentWord, pronunciationSource])
+    }, [])
 
 
     const handleChange = (e) => {
@@ -55,12 +50,12 @@ export default function Merriam() {
                     })
                 console.log(res.data);
                 setDictionary({ word: res.data })
-                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${dictionary.word[0].hwi.prs[0].sound.audio[0]}/${dictionary.word[0].hwi.prs[0].sound.audio}.mp3`)
+                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`)
                 console.log(pronunciationSource.toString())
             } catch (err) {
                 console.error(err);
             } finally {
-                console.log("A Merriam Webster Dictionary API GET call attempt was made")
+                console.log("Another Merriam Webster Dictionary API GET call attempt was made")
             }
         }
 
