@@ -1,9 +1,29 @@
+.siteBackground {
+  background: linear-gradient(35deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
+}
+.generalSpacing {
+  margin: 1rem;
+}
+.basicMargin {
+  margin: 1rem;
+}
+.centerText {
+  text-align: center;
+}
 .title {
   text-transform: capitalize;
   text-decoration: underline;
   font-weight: bold;
   text-align: center;
 }
-.generalSpacing {
-  margin: 1rem;
+.wordBlock {
+  background: rgb(181, 215, 226);
+  margin: 1rem auto 1rem;
+  padding: 1rem;
+}
+.word {
+  text-transform: capitalize;
+}
+.partOfSpeech {
+  margin: auto auto 1rem;
 }
