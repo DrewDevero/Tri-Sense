@@ -5,12 +5,19 @@ export default function Merriam() {
     
     const [dictionary, setDictionary] = useState(null);
     const [currentWord, setCurrentWord] = useState("apple");
+    const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
+    /* let showDefinition;
+    if(dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] !== undefined) {
+        showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].dt[0][1]}</li>
+    } else if (dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] === undefined) {
+        showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].sense.dt[0][1]}</li>
+    } */
 
     useEffect(() => {
 
-        const searchWord = "apple";
+        const searchWord = currentWord;
         const Merriam = Merriam_URL;
         const API = API_KEY;
 
@@ -26,14 +33,17 @@ export default function Merriam() {
             } finally {
                 console.log("A Merriam Webster Dictionary API GET call attempt was made")
             }
+            
         }
 
         GetEnglishWord();
 
-    }, [Merriam_URL, API_KEY])
+    }, [Merriam_URL, API_KEY, currentWord, pronunciationSource])
+
 
     const handleChange = (e) => {
-        setCurrentWord(e.target.value)
+        e.preventDefault();
+        setCurrentWord(e.target.value || "a")
     }
 
     async function handleSubmit(e) {
@@ -45,6 +55,8 @@ export default function Merriam() {
                     })
                 console.log(res.data);
                 setDictionary({ word: res.data })
+                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${dictionary.word[0].hwi.prs[0].sound.audio[0]}/${dictionary.word[0].hwi.prs[0].sound.audio}.mp3`)
+                console.log(pronunciationSource.toString())
             } catch (err) {
                 console.error(err);
             } finally {
@@ -62,12 +74,17 @@ export default function Merriam() {
                 <input type="submit" value="Show Dictionary Data"></input>
             </form>
             <div className="wordBlock">
-                <h2 className="word">{currentWord}:</h2>
                 {dictionary && 
+                <div>
+                <h2 className="word">{dictionary.word[0].hwi.hw}:</h2>
                     <div>
                         <p className="partOfSpeech">({dictionary.word[0].fl})</p> 
-                        {/* <li>{dictionary.word[0].def[0].sseq[0][0][1].dt[0][1]}</li> */}
+                        {/* { showDefinition } */}
                     </div>
+                    <audio controls> 
+                        {pronunciationSource && <source src={ pronunciationSource } type="audio/mp3" />}
+                    </audio>
+                </div>
                 }
             </div>
         </div>
