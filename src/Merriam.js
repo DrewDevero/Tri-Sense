@@ -4,10 +4,11 @@ import axios from "axios";
 export default function Merriam() {
     
     const [dictionary, setDictionary] = useState(null);
-    const [currentWord, setCurrentWord] = useState("apple");
-    const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
+    const [currentWord, setCurrentWord] = useState(null);
+    const [pronunciationSource, setPronunciationSource] = useState(null/* "https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3" */);
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
+    let pronounce = pronunciationSource;
     /* let showDefinition;
     if(dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] !== undefined) {
         showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].dt[0][1]}</li>
@@ -24,6 +25,7 @@ export default function Merriam() {
                     })
                 console.log(res.data);
                 setDictionary({ word: res.data })
+                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`)
             } catch (err) {
                 console.error(err);
             } finally {
@@ -37,13 +39,12 @@ export default function Merriam() {
 
 
     const handleChange = (e) => {
-        e.preventDefault();
-        setCurrentWord(e.target.value || "a")
+        setCurrentWord(e.target.value || "a");
     }
 
     async function handleSubmit(e) {
         e.preventDefault();
-
+        if(currentWord !== null) {
         try {
             const res = await axios.get(Merriam_URL + currentWord + API_KEY, {
                     timeout: 2000,
@@ -51,13 +52,18 @@ export default function Merriam() {
                 console.log(res.data);
                 setDictionary({ word: res.data })
                 setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`)
-                console.log(pronunciationSource.toString())
             } catch (err) {
                 console.error(err);
             } finally {
                 console.log("Another Merriam Webster Dictionary API GET call attempt was made")
             }
         }
+    }
+
+/* useEffect(() => {
+    
+    console.log("hello", pronunciationSource.toString())
+}, [pronunciationSource]) */
 
     return(
         <div className="siteBackground">
@@ -77,7 +83,7 @@ export default function Merriam() {
                         {/* { showDefinition } */}
                     </div>
                     <audio controls> 
-                        {pronunciationSource && <source src={ pronunciationSource } type="audio/mp3" />}
+                        <source src= { pronounce } type="audio/mp3" />
                     </audio>
                 </div>
                 }
