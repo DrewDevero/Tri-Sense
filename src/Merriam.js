@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 export default function Merriam() {
     
     const [dictionary, setDictionary] = useState(null);
     const [currentWord, setCurrentWord] = useState(null);
-    const [pronunciationSource, setPronunciationSource] = useState(null/* "https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3" */);
+    const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
-    let pronounce = pronunciationSource;
+    const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
+    const pronounce = useRef();
     /* let showDefinition;
     if(dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] !== undefined) {
         showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].dt[0][1]}</li>
@@ -25,7 +26,6 @@ export default function Merriam() {
                     })
                 console.log(res.data);
                 setDictionary({ word: res.data })
-                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`)
             } catch (err) {
                 console.error(err);
             } finally {
@@ -45,13 +45,20 @@ export default function Merriam() {
     async function handleSubmit(e) {
         e.preventDefault();
         if(currentWord !== null) {
-        try {
-            const res = await axios.get(Merriam_URL + currentWord + API_KEY, {
+            try {
+                const res = await axios.get(Merriam_URL + currentWord + API_KEY, {
                     timeout: 2000,
                     })
                 console.log(res.data);
                 setDictionary({ word: res.data })
-                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`)
+                const changePronunciation = () => {
+                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
+                    if(pronounce.current) {
+                        pronounce.current.pause();
+                        pronounce.current.load();
+                    }
+                }
+                changePronunciation();
             } catch (err) {
                 console.error(err);
             } finally {
@@ -66,28 +73,41 @@ export default function Merriam() {
 }, [pronunciationSource]) */
 
     return(
-        <div className="siteBackground">
-            <form className="basicMargin" 
-                onChange={ handleChange }
-                onSubmit={ handleSubmit }
-            >
-                <input type="text" placeholder="search word"></input>
-                <input type="submit" value="Show Dictionary Data"></input>
-            </form>
-            <div className="wordBlock">
-                {dictionary && 
-                <div>
-                <h2 className="word">{dictionary.word[0].hwi.hw}:</h2>
-                    <div>
-                        <p className="partOfSpeech">({dictionary.word[0].fl})</p> 
-                        {/* { showDefinition } */}
-                    </div>
-                    <audio controls> 
-                        <source src= { pronounce } type="audio/mp3" />
-                    </audio>
+        <main>
+
+            <div className="generalSpacing siteBackground">
+                <header>
+                    <h1 className="title">tri-sense</h1>
+                </header>
+                <div className="basicMargin centerText">
+                <a href={ ASL_Alphabet } terget="_blank" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
-                }
             </div>
-        </div>
+
+            <div className="formAndWordBlock siteBackground">
+                <form className="basicMargin" 
+                    onChange={ handleChange }
+                    onSubmit={ handleSubmit }
+                >
+                    <label title="Search Word"><input type="text" placeholder="search word" /></label>
+                    <label title="Dictionary Data"><input className="submitWord" type="submit" value="Show Dictionary Data" /></label>
+                </form>
+                <div className="wordBlock">
+                    {dictionary && 
+                    <div>
+                    <h2 className="word">{dictionary.word[0].hwi.hw}:</h2>
+                        <div>
+                            <p className="partOfSpeech">({dictionary.word[0].fl})</p> 
+                            {/* { showDefinition } */}
+                        </div>
+                        {pronunciationSource &&
+                        <audio controls ref={ pronounce }> 
+                            <source src= { pronunciationSource } type="audio/mp3" />
+                        </audio>}
+                    </div>
+                    }
+                </div>
+            </div>
+        </main>
     )
 }

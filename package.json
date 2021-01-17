@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tensorflow-models/handpose": "0.0.6",
     "@tensorflow/tfjs": "^2.8.3",
+    "@tensorflow/tfjs-backend-webgl": "^2.8.4",
+    "@tensorflow/tfjs-converter": "^2.8.4",
+    "@tensorflow/tfjs-core": "^2.8.4",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
@@ -37,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-axe": "^3.5.4"
   }
 }

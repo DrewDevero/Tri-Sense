@@ -28,14 +28,14 @@ export default function App() {
               </nav>
 
               <Switch>
-                <Route path="/Home">
-                  <Home />
-                </Route>
                 <Route path="/ASL">
                   <ASL />
                 </Route>
                 <Route path="/Merriam">
                   <Merriam />
+                </Route>
+                <Route path="/">
+                  <Home />
                 </Route>
               </Switch>
             </div>

@@ -1,5 +1,6 @@
 .siteBackground {
   background: linear-gradient(35deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
+  padding: 0.5rem;
 }
 .generalSpacing {
   margin: 1rem;
@@ -21,9 +22,34 @@
   margin: 1rem auto 1rem;
   padding: 1rem;
 }
+.submitWord {
+  cursor: pointer;
+}
+.formAndWordBlock {
+  margin: -1rem 1rem 1rem;
+}
 .word {
   text-transform: capitalize;
 }
 .partOfSpeech {
   margin: auto auto 1rem;
+}
+.videoArea {
+  height: 35rem;
+  display: flex;
+  justify-content: center;
+}
+.videoSize {
+  height: 35rem;
+  width: 40rem;
+}
+#stopWebcam {
+  margin: 0rem auto 1rem;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 10%;
+  background: linear-gradient(135deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
+  font-size: 2rem;
+  cursor: pointer;
 }

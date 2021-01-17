@@ -8,3 +8,6 @@ Sign language interpreted by camera and returned as written and vocalized charac
 **End business goal**:<br/> Camera access. Oxford Dictionary API.<br/><br/>
 **Acceptance criteria**:<br/> Track hand motion and nuances. Refer to American Sign Language Alphabet. Refer to Oxford Dictionary API. Return written characters. Return vocal versions of signed characters.<br/><br/>
 ![Tri-Sense Mockup](/tri-sense_mockup.png)
+
+Sources: 
+Connecting webcam to browser: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
