@@ -10,4 +10,5 @@ Sign language interpreted by camera and returned as written and vocalized charac
 ![Tri-Sense Mockup](/tri-sense_mockup.png)
 
 Sources: 
-Connecting webcam to browser: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
+MediaPipe documentation and code boilerplate: https://google.github.io/mediapipe/getting_started/javascript.html
+General connecting webcam to browser capability: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm

@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mediapipe/camera_utils": "^0.1.1606863050",
+    "@mediapipe/control_utils": "^0.1.1606863011",
+    "@mediapipe/drawing_utils": "^0.1.1607547345",
+    "@mediapipe/hands": "^0.1.1606863095",
     "@tensorflow-models/handpose": "0.0.6",
     "@tensorflow/tfjs": "^2.8.3",
+    "@tensorflow/tfjs-backend-cpu": "^2.8.4",
     "@tensorflow/tfjs-backend-webgl": "^2.8.4",
     "@tensorflow/tfjs-converter": "^2.8.4",
     "@tensorflow/tfjs-core": "^2.8.4",

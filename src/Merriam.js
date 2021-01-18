@@ -5,6 +5,7 @@ export default function Merriam() {
     
     const [dictionary, setDictionary] = useState(null);
     const [currentWord, setCurrentWord] = useState(null);
+    const [displayWord, setDisplayWord] = useState(null);
     const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
@@ -25,6 +26,7 @@ export default function Merriam() {
                     timeout: 2000,
                     })
                 console.log(res.data);
+                setDisplayWord("apple");
                 setDictionary({ word: res.data })
             } catch (err) {
                 console.error(err);
@@ -50,6 +52,7 @@ export default function Merriam() {
                     timeout: 2000,
                     })
                 console.log(res.data);
+                setDisplayWord(currentWord);
                 setDictionary({ word: res.data })
                 const changePronunciation = () => {
                 setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
@@ -80,7 +83,7 @@ export default function Merriam() {
                     <h1 className="title">tri-sense</h1>
                 </header>
                 <div className="basicMargin centerText">
-                <a href={ ASL_Alphabet } terget="_blank" alt="American Sign Language Alphabet">ASL Alphabet</a>
+                <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
             </div>
 
@@ -95,15 +98,18 @@ export default function Merriam() {
                 <div className="wordBlock">
                     {dictionary && 
                     <div>
-                    <h2 className="word">{dictionary.word[0].hwi.hw}:</h2>
+                    <h2 className="word">{ displayWord }:</h2>
                         <div>
                             <p className="partOfSpeech">({dictionary.word[0].fl})</p> 
                             {/* { showDefinition } */}
                         </div>
                         {pronunciationSource &&
-                        <audio controls ref={ pronounce }> 
-                            <source src= { pronunciationSource } type="audio/mp3" />
-                        </audio>}
+                        <div>
+                            <h3>Pronuciation: { dictionary.word[0].hwi.hw }</h3>
+                            <audio controls ref={ pronounce } className="audioBlock"> 
+                                <source src= { pronunciationSource } type="audio/mp3" />
+                            </audio>
+                        </div>}
                     </div>
                     }
                 </div>

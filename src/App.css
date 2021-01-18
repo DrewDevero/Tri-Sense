@@ -34,12 +34,29 @@
 .partOfSpeech {
   margin: auto auto 1rem;
 }
-.videoArea {
+.audioBlock {
+  margin: 1rem;
+}
+.videoCanvasSpacing {
   height: 35rem;
+  width: 40rem;
+  margin: 2rem auto 1rem;
   display: flex;
   justify-content: center;
 }
+.videoArea {
+  height: 35rem;
+  width: 40rem;
+  display: flex;
+  transform: scale(-1,1);
+}
 .videoSize {
+  position: relative;
+  height: 35rem;
+  width: 40rem;
+}
+.canvasArea {
+  position: absolute;
   height: 35rem;
   width: 40rem;
 }
@@ -51,5 +68,6 @@
   border-radius: 10%;
   background: linear-gradient(135deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
   font-size: 2rem;
+  text-transform: capitalize;
   cursor: pointer;
 }
