@@ -14,7 +14,8 @@
 .title {
   text-transform: capitalize;
   text-decoration: underline;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: bolder;
   text-align: center;
 }
 .wordBlock {
@@ -38,27 +39,27 @@
   margin: 1rem;
 }
 .videoCanvasSpacing {
-  height: 35rem;
-  width: 40rem;
+  height: 20rem;
+  width: 25rem;
   margin: 2rem auto 1rem;
   display: flex;
   justify-content: center;
 }
 .videoArea {
-  height: 35rem;
-  width: 40rem;
+  height: 20rem;
+  width: 25rem;
   display: flex;
   transform: scale(-1,1);
 }
 .videoSize {
   position: relative;
-  height: 35rem;
-  width: 40rem;
+  height: 20rem;
+  width: 25rem;
 }
 .canvasArea {
   position: absolute;
-  height: 35rem;
-  width: 40rem;
+  height: 20rem;
+  width: 25rem;
 }
 #stopWebcam {
   margin: 0rem auto 1rem;
@@ -67,7 +68,8 @@
   border: none;
   border-radius: 10%;
   background: linear-gradient(135deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
   text-transform: capitalize;
   cursor: pointer;
 }

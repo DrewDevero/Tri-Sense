@@ -11,13 +11,6 @@ useEffect(() => {
 
 }, [])
 
-
-/* useEffect(() => {
-
-    main();
-
-}, []); */
-
 return(
         <main>
             <div className="generalSpacing siteBackground">

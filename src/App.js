@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +11,29 @@ import Merriam from "./Merriam";
 import "./App.css";
 
 export default function App() {
+
+  let thisWindowName = document.defaultView.location.pathname;
+
+  useEffect(() => {
+
+      const nav = document.getElementsByTagName("span");
+
+      nav[0].onclick = stopWebcam;
+      nav[1].onclick = stopWebcam;
+      nav[2].onclick = stopWebcam;
+
+  function stopWebcam() {
+      if(thisWindowName === "/Home") {
+        console.log(thisWindowName);
+        navigator.mediaDevices.getUserMedia({audio: false, video: true})
+        .then(mediaStream => {
+          const tracks = mediaStream.getTracks();
+          tracks[0].stop();
+        })
+      }
+  }
+
+  }, [thisWindowName])
 
   return (
         <Router>

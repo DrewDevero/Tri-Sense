@@ -8,12 +8,12 @@ export default function MotionTracking() {
 // Our input frames will come from here.
 const videoBlock = document.getElementsByClassName("videoCanvasSpacing")[0];
 const videoElement =
-    document.getElementsByClassName('videoSize')[0];
+    document.getElementsByClassName("videoSize")[0];
 const canvasElement =
-    document.getElementsByClassName('canvasArea')[0];
+    document.getElementsByClassName("canvasArea")[0];
 /* const controlsElement =
     document.getElementsByClassName('control-panel')[0]; */
-const canvasCtx = canvasElement.getContext('2d');
+const canvasCtx = canvasElement.getContext("2d");
 const stopCam = document.getElementById("stopWebcam");
 let toggle = false;
 
@@ -68,8 +68,8 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await hands.send({image: videoElement});
   },
-  height: "35rem",
-  width: "40rem"
+  height: "20rem",
+  width: "25rem"
 });
 camera.start();
 
