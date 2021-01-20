@@ -9,6 +9,7 @@ import Home from "./Home";
 import ASL from "./ASL";
 import Merriam from "./Merriam";
 import "./App.css";
+import "./train_test/ImageTesting";
 
 export default function App() {
 

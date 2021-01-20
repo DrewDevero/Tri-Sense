@@ -39,27 +39,27 @@
   margin: 1rem;
 }
 .videoCanvasSpacing {
-  height: 20rem;
-  width: 25rem;
+  height: 720px;
+  width: 1280px;
   margin: 2rem auto 1rem;
   display: flex;
   justify-content: center;
 }
 .videoArea {
-  height: 20rem;
-  width: 25rem;
+  height: 720px;
+  width: 1280px;
   display: flex;
   transform: scale(-1,1);
 }
 .videoSize {
   position: relative;
-  height: 20rem;
-  width: 25rem;
+  height: 720px;
+  width: 1280px;
 }
 .canvasArea {
   position: absolute;
-  height: 20rem;
-  width: 25rem;
+  height: 720px;
+  width: 1280px;
 }
 #stopWebcam {
   margin: 0rem auto 1rem;
