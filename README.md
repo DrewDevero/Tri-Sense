@@ -12,3 +12,4 @@ Sign language interpreted by camera and returned as written and vocalized charac
 Sources: 
 MediaPipe documentation and code boilerplate: https://google.github.io/mediapipe/getting_started/javascript.html
 General connecting webcam to browser capability: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
+General create files via javascript: https://code-boxx.com/create-save-files-javascript/

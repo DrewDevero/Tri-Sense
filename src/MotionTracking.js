@@ -1,6 +1,6 @@
 import { HAND_CONNECTIONS, Hands } from "@mediapipe/hands/hands";
 import { Camera } from "@mediapipe/camera_utils/camera_utils";
-/* import { FPS } from "@mediapipe/control_utils/control_utils"; */
+// import { FPS } from "@mediapipe/control_utils/control_utils";
 import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils/drawing_utils";
 
 export default function MotionTracking() {
@@ -32,7 +32,7 @@ function onResults(results) {
 //  document.body.classList.add('loaded');
 
   // Update the frame rate.
- //  fpsControl.tick();
+ // fpsControl.tick();
 
   // Draw the overlays.
   canvasCtx.save();
