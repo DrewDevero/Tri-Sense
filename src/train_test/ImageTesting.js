@@ -34,11 +34,10 @@ function takeScreenShots() {
         withNodeSleep(1000).then(() => fs.mkdir(`../images/${char}`, () => null),
         (async function populateDirs() {
             for(let i = 1; i < numOfImages; i++) {
-                await withNodeSleep(1000).then(() => {fs.writeFile(`../images/${char}/label_${char}_${i.toString()}.png`, /* imageCapture.grabFrame() */"utf8", () => null);
+                await withNodeSleep(1000).then(() => {fs.writeFile(`../images/${char}/label_${char}_${i.toString()}.png`,"utf8", () => null);
                 })
             }
         })(),
-        /* populateDirs() */
     )})
 }
 saveImages();
