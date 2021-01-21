@@ -12,12 +12,6 @@ export default function Merriam() {
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
     const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
     const pronounce = useRef();
-    /* let showDefinition;
-    if(dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] !== undefined) {
-        showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].dt[0][1]}</li>
-    } else if (dictionary !== null && dictionary.word[0].def[0].sseq[0][0][1].dt[0][1] === undefined) {
-        showDefinition = <li>{dictionary.word[0].def[0].sseq[0][0][1].sense.dt[0][1]}</li>
-    } */
 
     useEffect(() => {
 
@@ -30,7 +24,7 @@ export default function Merriam() {
                 setDisplayWord("apple");
                 setDictionary({ word: res.data })
                 setDefinition(JSON.stringify(res.data[0].def[0]))
-                setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
+                // setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
             } catch (err) {
                 console.error(err);
             } finally {
@@ -108,7 +102,7 @@ export default function Merriam() {
                                 <source src= { pronunciationSource } type="audio/mp3" />
                             </audio>
                         </div>}
-                        {/* // definition for devs to use in appropriate cases considering high level of navigation specificity
+                        {/* // definition to use in appropriate cases considering high level of navigation specificity
                         <div>
                             <p>{ definition }</p>
                         </div> */}

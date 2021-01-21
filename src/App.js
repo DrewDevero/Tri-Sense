@@ -24,7 +24,7 @@ export default function App() {
                     <Link to="/ASL">ASL Chat App</Link>
                 </span>
                 <span className="generalSpacing">
-                    <Link to="/Merriam">Dictionary Lookup App</Link>
+                    <Link to="/Merriam">Pronunciation App</Link>
                 </span>
               </nav>
 
