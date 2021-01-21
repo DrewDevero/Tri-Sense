@@ -2,16 +2,16 @@
 [![Tri-Sense Site Screenshot](/Tri-Sense_site_screenshot.jpg)](https://drewdevero.github.io/Tri-Sense/)
 1st level project(MVP): A dictionary look up app with returning word, pronunciation(written form), part of speach, and vocal file giving auditory example of pronunciation.
 <br/>
-2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. This creates the foundation for myself and other programmers to build applications using these combined technologies.
+2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. Show mapping of fingers so user can easily relate hand position to sign language alphabet and numbers 0 - 9.
 <br/>
 3rd level project(serious stretch goals)- relate live to American Sign Language alphabet, pull words from Merriam-Webster's Dictionary API and provide functionality to sign our words returned as audio and text (can scale back to written input only to still provide viable 1st level product(MVP) within the limited timeframe). Meant as the start of a much larger project; meant for submissions to initiatives like the [Google Developers Solution Challenge](https://developers.google.com/community/dsc-solution-challenge).
 ## User-Story
 **Used primarily by**:<br/>
-Developers and any client who is hard of hearing; I want to type out and sign out my words converted to sounds and written form so that I can more efficiently communicate with all other people in a multitude of situations.<br/><br/>
+Client who is hearing impaired; I want to type out words and relate them to signed out words; convert words to sounds and written form so that I can more efficiently communicate with all other people in a multitude of situations.<br/><br/>
 **End user goal**:<br/>
-App for creating sign language interpretation by camera and returned as written and vocalized characters.<br/><br/> 
+Dictionary App for word lookup and audio returned as written and vocalized characters/words; App for tracking hand motion by webcam.<br/><br/> 
 **End business goal**:<br/> Camera access. Merriam-Webster's Dictionary API.<br/><br/>
-**Acceptance criteria**:<br/> Track hand motion and nuances. Refer to American Sign Language Alphabet. Refer to Merriam-Webster's API. Return written characters. Return vocal versions of signed characters.<br/><br/>
+**Acceptance criteria**:<br/> Refer to American Sign Language Alphabet. Refer to Merriam-Webster's API. Return written characters. Return vocal versions of characters. Enable webcam hand tracking through react app.<br/><br/>
 ![Tri-Sense Mockup](/tri-sense_mockup.png)
 
 *Level One project (MVP) and Level Two project (strech goal) achieved. All acceptance criteria achieved.
