@@ -4,7 +4,7 @@
 <br/>
 2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. This creates the foundation for myself and other programmers to build applications using these combined technologies.
 <br/>
-3rd level project(serious stretch goals)- relate live to American Sign Language alphabet, pull words from Merriam-Webster's Dictionary API and provide functionality to sign our words returned as audio and text (can scale back to written input only to still provide viable 1st level product(MVP) within the limited timeframe).
+3rd level project(serious stretch goals)- relate live to American Sign Language alphabet, pull words from Merriam-Webster's Dictionary API and provide functionality to sign our words returned as audio and text (can scale back to written input only to still provide viable 1st level product(MVP) within the limited timeframe). Meant as the start of a much larger project; meant for submissions to initiatives like the [Google Developers Solution Challenge](https://developers.google.com/community/dsc-solution-challenge).
 ## User-Story
 **Used primarily by**:<br/>
 Developers and any client who is hard of hearing; I want to type out and sign out my words converted to sounds and written form so that I can more efficiently communicate with all other people in a multitude of situations.<br/><br/>
