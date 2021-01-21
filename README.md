@@ -1,6 +1,6 @@
 # Tri-Sense
 [![Tri-Sense Site Screenshot](/Tri-Sense_site_screenshot.jpg)](https://drewdevero.github.io/Tri-Sense/)
-1st level project(MVP): A dictionary look up app with returning word, pronunciation(written form), part of speach, and vocal file giving auditory example of pronunciation.
+1st level project(MVP): A dictionary look up app with returning word, pronunciation(written form), part of speach, and vocal file giving auditory example of pronunciation. Accessibility level considered adequate as determined by [Axe Accessibility](https://www.deque.com/axe/browser-extensions/?utm_term=Axe%20Plugin&utm_campaign=Search+-+axe+Pro+-+Branded&utm_source=bing&utm_medium=ppc&hsa_src=o&hsa_ad=&hsa_tgt=kwd-82738791770917:loc-190&hsa_mt=e&hsa_ver=3&hsa_acc=7854167720&hsa_kw=Axe%20Plugin&hsa_grp=1323813097587450&hsa_cam=6769485255&hsa_net=adwords&msclkid=b251fc65867e155e24949c6c13f427ae).
 <br/>
 2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. Show mapping of fingers so user can easily relate hand position to sign language alphabet and numbers 0 - 9.
 <br/>
@@ -11,7 +11,7 @@ Client who is hearing impaired; I want to type out words and relate them to sign
 **End user goal**:<br/>
 Dictionary App for word lookup and audio returned as written and vocalized characters/words; App for tracking hand motion by webcam.<br/><br/> 
 **End business goal**:<br/> Camera access. Merriam-Webster's Dictionary API.<br/><br/>
-**Acceptance criteria**:<br/> Refer to American Sign Language Alphabet. Refer to Merriam-Webster's API. Return written characters. Return vocal versions of characters. Enable webcam hand tracking through react app.<br/><br/>
+**Acceptance criteria**:<br/> Refer to American Sign Language Alphabet. Refer to Merriam-Webster's API. Return written characters. Return vocal versions of characters. Enable webcam hand tracking through react app. Accessibility level considered adequate as determined by [Axe Accessibility](https://www.deque.com/axe/browser-extensions/?utm_term=Axe%20Plugin&utm_campaign=Search+-+axe+Pro+-+Branded&utm_source=bing&utm_medium=ppc&hsa_src=o&hsa_ad=&hsa_tgt=kwd-82738791770917:loc-190&hsa_mt=e&hsa_ver=3&hsa_acc=7854167720&hsa_kw=Axe%20Plugin&hsa_grp=1323813097587450&hsa_cam=6769485255&hsa_net=adwords&msclkid=b251fc65867e155e24949c6c13f427ae).<br/><br/>
 ![Tri-Sense Mockup](/tri-sense_mockup.png)
 
 *Level One project (MVP) and Level Two project (strech goal) achieved. All acceptance criteria achieved.
