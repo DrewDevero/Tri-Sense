@@ -1,4 +1,5 @@
 # Tri-Sense
+[![Tri-Sense Site Screenshot](./Tri-Sense_site_screenshot.jpg)](https://drewdevero.github.io/Tri-Sense/)
 1st level project(MVP): A dictionary look up app with returning word, pronunciation(written form), part of speach, and vocal file giving auditory example of pronunciation.
 <br/>
 2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. This creates the foundation for myself and other programmers to build applications using these combined technologies.
