@@ -5,7 +5,7 @@ import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils/drawing_
 
 export default function MotionTracking() {
 
-// Our input frames will come from here.
+// Input frames
 const videoBlock = document.getElementsByClassName("videoCanvasSpacing")[0];
 const videoElement =
     document.getElementsByClassName("videoSize")[0];
@@ -17,8 +17,7 @@ const canvasCtx = canvasElement.getContext("2d");
 const stopCam = document.getElementById("stopWebcam");
 let toggle = false;
 
-// We'll add this to our control panel later, but we'll save it here so we can
-// call tick() each time the graph runs.
+// Call tick() each time the graph runs.
 // const fpsControl = new FPS();
 
 // Optimization: Turn off animated spinner after its hiding animation is done.
@@ -68,10 +67,12 @@ const camera = new Camera(videoElement, {
   onFrame: async () => {
     await hands.send({image: videoElement});
   },
-  height: 720,
-  width: 1280
+  height: "25rem",
+  width: "30rem"
 });
 camera.start();
+
+// allows the client to toggle the webcam
 
 stopCam.onclick = stopWebcam;
 

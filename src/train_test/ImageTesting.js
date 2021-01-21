@@ -7,11 +7,11 @@ const withNodeSleep = promisify(setTimeout);
 
 const labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 const numOfImages = 21;
-let totalImages = 0;
-let imageCapture;
+// let totalImages = 0;
+// let imageCapture;
 // const captureButton = document.querySelector("button");
 
-let mediaStream = null;
+// let mediaStream = null;
 /* (async function getUserMedia() {
     try {
         mediaStream = await navigator.mediaDevices.getUserMedia({video: { width:1280, height:720 }})
@@ -23,11 +23,14 @@ let mediaStream = null;
 
 // captureButton.onclick = takeScreenShots;
 
-function takeScreenShots() {
+/* function takeScreenShots() {
     const track = mediaStream.getVideoTracks()[0];
     imageCapture = new ImageCapture(track);
     saveImages();
-}
+} */
+
+
+// creates directories and files based on the developer's wanted labels using Node.js
 
  function saveImages() {
     labels.forEach((char) => {

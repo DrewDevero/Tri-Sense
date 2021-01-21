@@ -6,6 +6,7 @@ export default function Merriam() {
     const [dictionary, setDictionary] = useState(null);
     const [currentWord, setCurrentWord] = useState(null);
     const [displayWord, setDisplayWord] = useState(null);
+    const [definition, setDefinition] = useState(null);
     const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
@@ -28,6 +29,8 @@ export default function Merriam() {
                 console.log(res.data);
                 setDisplayWord("apple");
                 setDictionary({ word: res.data })
+                setDefinition(JSON.stringify(res.data[0].def[0]))
+                setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
             } catch (err) {
                 console.error(err);
             } finally {
@@ -56,6 +59,7 @@ export default function Merriam() {
                 setDictionary({ word: res.data })
                 const changePronunciation = () => {
                 setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
+                setDefinition(JSON.stringify(res.data[0].def[0]))
                     if(pronounce.current) {
                         pronounce.current.pause();
                         pronounce.current.load();
@@ -69,11 +73,6 @@ export default function Merriam() {
             }
         }
     }
-
-/* useEffect(() => {
-    
-    console.log("hello", pronunciationSource.toString())
-}, [pronunciationSource]) */
 
     return(
         <main>
@@ -100,8 +99,7 @@ export default function Merriam() {
                     <div>
                     <h2 className="word">{ displayWord }:</h2>
                         <div>
-                            <p className="partOfSpeech">({dictionary.word[0].fl})</p> 
-                            {/* { showDefinition } */}
+                            <p className="partOfSpeech">({dictionary.word[0].fl})</p>
                         </div>
                         {pronunciationSource &&
                         <div>
@@ -110,6 +108,10 @@ export default function Merriam() {
                                 <source src= { pronunciationSource } type="audio/mp3" />
                             </audio>
                         </div>}
+                        {/* // definition for devs to use in appropriate cases considering high level of navigation specificity
+                        <div>
+                            <p>{ definition }</p>
+                        </div> */}
                     </div>
                     }
                 </div>
