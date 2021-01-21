@@ -86,7 +86,7 @@ export default function Merriam() {
                     onSubmit={ handleSubmit }
                 >
                     <label title="Search Word"><input type="text" placeholder="search word" /></label>
-                    <label title="Pronunciation Data"><input className="submitWord" type="submit" value="Show Pronunciation Data" /></label>
+                    <label title="Pronunciation Search"><input className="submitWord" type="submit" value="Click for Pronunciation" /></label>
                 </form>
                 <div className="wordBlock">
                     {dictionary && 
