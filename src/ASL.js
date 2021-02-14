@@ -13,23 +13,23 @@ useEffect(() => {
 
 return(
         <main>
-            <div className="generalSpacing siteBackground">
+            <div className="general-spacing site-background">
                 <header>
                     <h1 className="title">tri-sense</h1>
                 </header>
-                <div className="basicMargin centerText">
+                <div className="basic-margin center-text">
                 <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
             </div>
             <div>
-                <div className="videoCanvasSpacing">
-                    <div className="videoArea">
-                        <video className="videoSize" autoPlay={ true } alt="American Sign Language Chat App Motion Tracking"></video>
-                        <canvas className="canvasArea"></canvas>
+                <div className="video-canvas-spacing">
+                    <div className="video-area">
+                        <video className="video-size" autoPlay={ true } alt="American Sign Language Chat App Motion Tracking"></video>
+                        <canvas className="canvas-area"></canvas>
                     </div>
                 </div>
-                <div className="centerText">
-                    <button type="button" id="stopWebcam">stop webcam</button>
+                <div className="center-text">
+                    <button type="button" id="stop-webcam">stop webcam</button>
                 </div>
             </div>
         </main>

@@ -1,14 +1,14 @@
-.siteBackground {
+.site-background {
   background: linear-gradient(35deg, lightblue, rgba(140, 140, 140, 0.5), lightgreen);
   padding: 0.5rem;
 }
-.generalSpacing {
+.general-spacing {
   margin: 1rem;
 }
-.basicMargin {
+.basic-margin {
   margin: 1rem;
 }
-.centerText {
+.center-text {
   text-align: center;
 }
 .title {
@@ -18,50 +18,50 @@
   font-weight: bolder;
   text-align: center;
 }
-.wordBlock {
+.word-block {
   background: rgb(181, 215, 226);
   margin: 1rem auto 1rem;
   padding: 1rem;
 }
-.submitWord {
+.submit-word {
   cursor: pointer;
 }
-.formAndWordBlock {
+.form-and-word-block {
   margin: -1rem 1rem 1rem;
 }
 .word {
   text-transform: capitalize;
 }
-.partOfSpeech {
+.part-of-speech {
   margin: auto auto 1rem;
 }
-.audioBlock {
+.audio-block {
   margin: 1rem;
 }
-.videoCanvasSpacing {
+.video-canvas-spacing {
   height: 25rem;
   width: 30rem;
   margin: 2rem auto 1rem;
   display: flex;
   justify-content: center;
 }
-.videoArea {
+.video-area {
   height: 25rem;
   width: 30rem;
   display: flex;
   transform: scale(-1,1);
 }
-.videoSize {
+.video-size {
   position: relative;
   height: 25rem;
   width: 30rem;
 }
-.canvasArea {
+.canvas-area {
   position: absolute;
   height: 25rem;
   width: 30rem;
 }
-#stopWebcam {
+#stop-webcam {
   margin: 0rem auto 1rem;
   padding: 1rem;
   outline: none;

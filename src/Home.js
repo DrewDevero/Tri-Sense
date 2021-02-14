@@ -6,11 +6,11 @@ const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fi
 
 return(
         <main>
-            <div className="generalSpacing siteBackground">
+            <div className="general-spacing site-background">
                 <header>
                     <h1 className="title">tri-sense</h1>
                 </header>
-                <div className="basicMargin centerText">
+                <div className="basic-margin center-text">
                 <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
             </div>

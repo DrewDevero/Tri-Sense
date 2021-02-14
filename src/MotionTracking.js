@@ -6,15 +6,15 @@ import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils/drawing_
 export default function MotionTracking() {
 
 // Input frames
-const videoBlock = document.getElementsByClassName("videoCanvasSpacing")[0];
+const videoBlock = document.getElementsByClassName("video-canvas-spacing")[0];
 const videoElement =
-    document.getElementsByClassName("videoSize")[0];
+    document.getElementsByClassName("video-size")[0];
 const canvasElement =
-    document.getElementsByClassName("canvasArea")[0];
+    document.getElementsByClassName("canvas-area")[0];
 /* const controlsElement =
     document.getElementsByClassName('control-panel')[0]; */
 const canvasCtx = canvasElement.getContext("2d");
-const stopCam = document.getElementById("stopWebcam");
+const stopCam = document.getElementById("stop-webcam");
 let toggle = false;
 
 // Call tick() each time the graph runs.

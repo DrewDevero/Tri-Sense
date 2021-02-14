@@ -15,15 +15,15 @@ export default function App() {
 
   return (
         <Router>
-            <div className="generalSpacing">
-              <nav className="centerText">
-                <span className="generalSpacing">
+            <div className="general-spacing">
+              <nav className="center-text">
+                <span className="general-spacing">
                     <Link to="/Home">Home</Link>
                 </span>
-                <span className="generalSpacing">
+                <span className="general-spacing">
                     <Link to="/ASL">ASL Chat App</Link>
                 </span>
-                <span className="generalSpacing">
+                <span className="general-spacing">
                     <Link to="/Merriam">Pronunciation App</Link>
                 </span>
               </nav>

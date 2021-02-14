@@ -71,34 +71,34 @@ export default function Merriam() {
     return(
         <main>
 
-            <div className="generalSpacing siteBackground">
+            <div className="general-spacing site-background">
                 <header>
                     <h1 className="title">tri-sense</h1>
                 </header>
-                <div className="basicMargin centerText">
+                <div className="basic-margin center-text">
                 <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
             </div>
 
-            <div className="formAndWordBlock siteBackground">
-                <form className="basicMargin" 
+            <div className="form-and-word-block site-background">
+                <form className="basic-margin" 
                     onChange={ handleChange }
                     onSubmit={ handleSubmit }
                 >
                     <label title="Search Word"><input type="text" placeholder="search word" /></label>
-                    <label title="Pronunciation Search"><input className="submitWord" type="submit" value="Click for Pronunciation" /></label>
+                    <label title="Pronunciation Search"><input className="submit-word" type="submit" value="Click for Pronunciation" /></label>
                 </form>
-                <div className="wordBlock">
+                <div className="word-block">
                     {dictionary && 
                     <div>
                     <h2 className="word">{ displayWord }:</h2>
                         <div>
-                            <p className="partOfSpeech">({dictionary.word[0].fl})</p>
+                            <p className="part-of-speech">({dictionary.word[0].fl})</p>
                         </div>
                         {pronunciationSource &&
                         <div>
                             <h3>Pronuciation: { dictionary.word[0].hwi.hw }</h3>
-                            <audio controls ref={ pronounce } className="audioBlock"> 
+                            <audio controls ref={ pronounce } className="audio-block"> 
                                 <source src= { pronunciationSource } type="audio/mp3" />
                             </audio>
                         </div>}
