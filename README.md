@@ -5,6 +5,16 @@
 2nd level project(stretch goals) - Detect hand position and show constant stream live through webcam incorporating another technology, MediaPipe hand tracking, properly through react. Make that functionality capable of being activated or deactivated via client. Show mapping of fingers so user can easily relate hand position to sign language alphabet and numbers 0 - 9.
 <br/>
 3rd level project(serious stretch goals)- relate live to American Sign Language alphabet, pull words from Merriam-Webster's Dictionary API and provide functionality to sign our words returned as audio and text (can scale back to written input only to still provide viable 1st level product(MVP) within the limited timeframe). Meant as the start of a much larger project; meant for submissions to initiatives like the [Google Developers Solution Challenge](https://developers.google.com/community/dsc-solution-challenge).
+<br/>
+
+### Database Implementation
+- [ ] Create a database using PostgreSQL
+- [ ] Create model with table for users in Java
+- [ ] Create model with table for words in Java
+- [ ] Create model with table for ASL signs in Java
+- [ ] Generate CRUD capability via React and Java
+- [ ] *Stretch Goal* Implement security via login and give specified CRUD capability depending on Admin or User login 
+
 ## User-Story
 **Used primarily by**:<br/>
 Client who is hearing impaired; I want to type out words and relate them to signed out words; convert words to sounds and written form so that I can more efficiently communicate with all other people in a multitude of situations.<br/><br/>
