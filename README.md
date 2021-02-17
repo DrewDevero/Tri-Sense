@@ -8,7 +8,7 @@
 <br/>
 
 ### Database Implementation
-- [ ] Create a database using PostgreSQL
+- [x] Create a database using PostgreSQL
 - [ ] Create model with table for users using Java
 - [ ] Create model with table for words using Java
 - [ ] Create model with table for ASL signs using Java
