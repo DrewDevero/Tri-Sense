@@ -9,9 +9,9 @@
 
 ### Database Implementation
 - [x] Create a database using PostgreSQL
-- [ ] Create model with table for users using Java
-- [ ] Create model with table for words using Java
-- [ ] Create model with table for ASL signs using Java
+- [x] Create model with table for users using Java
+- [x] Create model with table for words using Java
+- [x] Create model with table for ASL letters **A-Z** and number **0-9** using Java
 - [ ] Generate CRUD capability using React and Java
 - [ ] *Stretch Goal* Implement security via login and give specified CRUD capability depending on Admin or User login 
 
