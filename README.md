@@ -27,7 +27,8 @@ Dictionary App for word lookup and audio returned as written and vocalized chara
 *Level One project (MVP) and Level Two project (strech goal) achieved. All acceptance criteria achieved.
 
 Sources: 
-MediaPipe documentation and code boilerplate: https://google.github.io/mediapipe/getting_started/javascript.html
+MediaPipe documentation and package: https://google.github.io/mediapipe/getting_started/javascript.html
+Finger Pose documentation and package: https://openbase.com/js/fingerpose/documentation
 General connecting webcam to browser capability: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 General create files via javascript: https://code-boxx.com/create-save-files-javascript/
 LabelBox for image annotation to use in training and testing cases: https://app.labelbox.com/

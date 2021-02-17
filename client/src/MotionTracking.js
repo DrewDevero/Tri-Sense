@@ -2,6 +2,7 @@ import { HAND_CONNECTIONS, Hands } from "@mediapipe/hands/hands";
 import { Camera } from "@mediapipe/camera_utils/camera_utils";
 // import { FPS } from "@mediapipe/control_utils/control_utils";
 import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils/drawing_utils";
+import * as fp from "fingerpose/dist/fingerpose";
 
 export default function MotionTracking() {
 
@@ -50,8 +51,20 @@ function onResults(results) {
         color: isRightHand ? '#00FF00' : '#FF0000',
         fillColor: isRightHand ? '#FF0000' : '#00FF00'
       });
+      async function handGestures() {
+        const gestureEstimate = new fp.GestureEstimator([
+          fp.Gestures.ThumbsUpGesture,
+          fp.Gestures.VictoryGesture
+        ])
+        const gesture = await gestureEstimate.estimate(landmarks, 5);
+        // if(gesture.gestures[0].name === "victory") { console.log(gesture) }
+        console.log(gesture);
+      }
+      handGestures();
     }
+
   }
+  
   canvasCtx.restore();
 }
 
