@@ -1,15 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MotionTracking from "./MotionTracking";
 
 export default function ASL() {
 
+
 const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
-
-useEffect(() => {
-
-    MotionTracking();
-
-}, [])
 
 return(
         <main>
@@ -21,7 +16,7 @@ return(
                 <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
                 </div>
             </div>
-            <div>
+            <div className="canvas-area-relative">
                 <div className="video-canvas-spacing">
                     <div className="video-area">
                         <video className="video-size" autoPlay={ true } alt="American Sign Language Chat App Motion Tracking"></video>
@@ -31,6 +26,7 @@ return(
                 <div className="center-text">
                     <button type="button" id="stop-webcam">stop webcam</button>
                 </div>
+                { MotionTracking() }
             </div>
         </main>
     )

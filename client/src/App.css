@@ -38,6 +38,9 @@
 .audio-block {
   margin: 1rem;
 }
+.canvas-area-relative {
+  position: relative;
+}
 .video-canvas-spacing {
   height: 25rem;
   width: 30rem;
@@ -60,6 +63,16 @@
   position: absolute;
   height: 25rem;
   width: 30rem;
+}
+#symbolSpacing {
+  color: black;
+  font-size: 1rem;
+  text-transform: capitalize;
+  background: white;
+  position: absolute;
+  top: 1%;
+  left: 75%;
+  padding: 0.5rem;
 }
 #stop-webcam {
   margin: 0rem auto 1rem;
