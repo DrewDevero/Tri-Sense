@@ -5,8 +5,44 @@ import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils/drawing_
 import * as fp from "fingerpose";
 import React, { useEffect, useState } from "react";
 
-import { aGesture } from "./gesture_components/A"
+import { aGesture } from "./gesture_components/A";
 import { bGesture } from "./gesture_components/B";
+import { cGesture } from "./gesture_components/C";
+import { dGesture } from "./gesture_components/D";
+import { eGesture } from "./gesture_components/E";
+import { fGesture } from "./gesture_components/F";
+import { gGesture } from "./gesture_components/G";
+import { hGesture } from "./gesture_components/H";
+import { iGesture } from "./gesture_components/I";
+import { jGesture } from "./gesture_components/J";
+import { kGesture } from "./gesture_components/K";
+import { lGesture } from "./gesture_components/L";
+import { mGesture } from "./gesture_components/M";
+import { nGesture } from "./gesture_components/N";
+import { oGesture } from "./gesture_components/O";
+import { pGesture } from "./gesture_components/P";
+import { qGesture } from "./gesture_components/Q";
+import { rGesture } from "./gesture_components/R";
+import { sGesture } from "./gesture_components/S";
+import { tGesture } from "./gesture_components/T";
+import { uGesture } from "./gesture_components/U";
+import { vGesture } from "./gesture_components/V";
+import { wGesture } from "./gesture_components/W";
+import { xGesture } from "./gesture_components/X";
+import { yGesture } from "./gesture_components/Y";
+import { zGesture } from "./gesture_components/Z";
+
+import { zeroGesture } from "./gesture_components/Zero";
+import { oneGesture } from "./gesture_components/One";
+import { twoGesture } from "./gesture_components/Two";
+import { threeGesture } from "./gesture_components/Three";
+import { fourGesture } from "./gesture_components/Four";
+import { fiveGesture } from "./gesture_components/Five";
+import { sixGesture } from "./gesture_components/Six";
+import { sevenGesture } from "./gesture_components/Seven";
+import { eightGesture } from "./gesture_components/Eight";
+import { nineGesture } from "./gesture_components/Nine";
+
 
 export default function MotionTracking() {
 
@@ -64,9 +100,44 @@ useEffect(() => {
         (async function handGestures() {
           const gestureEstimate = new fp.GestureEstimator([
             aGesture,
-            bGesture
+            bGesture,
+            cGesture,
+            dGesture,
+            eGesture,
+            fGesture,
+            gGesture,
+            hGesture,
+            iGesture,
+            jGesture,
+            kGesture,
+            lGesture,
+            mGesture,
+            nGesture,
+            oGesture,
+            pGesture,
+            qGesture,
+            rGesture,
+            sGesture,
+            tGesture,
+            uGesture,
+            vGesture,
+            wGesture,
+            xGesture,
+            yGesture,
+            zGesture,
+            zeroGesture,
+            oneGesture,
+            twoGesture,
+            threeGesture,
+            fourGesture,
+            fiveGesture,
+            sixGesture,
+            sevenGesture,
+            eightGesture,
+            nineGesture
           ])
-          const gesture = await gestureEstimate.estimate(landmarks, 1.0);
+          const gesture = await gestureEstimate.estimate(landmarks, 6.0);
+          // console.log(gesture.gestures);
           if(gesture.gestures !== undefined && gesture.gestures.length > 0) {
           const confidence = gesture.gestures.map((prediction) => prediction.confidence
           );

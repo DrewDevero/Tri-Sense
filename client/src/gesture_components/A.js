@@ -11,4 +11,5 @@ aGesture.addDirection(Finger.Thumb, FingerDirection.DiagonalUpRight, 0.5);
 // Other four fingers
 for(let finger of [Finger.Index, Finger.Middle, Finger.Ring, Finger.Pinky]) {
     aGesture.addCurl(finger, FingerCurl.FullCurl, 1.0);
+    aGesture.addDirection(finger, FingerDirection.VerticalDown, 0.8);
 }
