@@ -67,9 +67,11 @@ useEffect(() => {
             bGesture
           ])
           const gesture = await gestureEstimate.estimate(landmarks, 1.0);
+          if(gesture.gestures !== undefined && gesture.gestures.length > 0) {
           symbolSpacing.style.opacity = "1";
           setSymbol(gesture.gestures[0].name);
           console.log(gesture.gestures);
+          }
         })();
       }
 
