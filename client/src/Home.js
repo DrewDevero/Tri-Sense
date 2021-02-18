@@ -8,7 +8,7 @@ return(
         <main>
             <div className="general-spacing site-background">
                 <header>
-                    <h1 className="title">tri-sense</h1>
+                    <h1 className="title">tri-sense&trade;</h1>
                 </header>
                 <div className="basic-margin center-text">
                 <a href={ ASL_Alphabet } target="_blank" rel="noreferrer" alt="American Sign Language Alphabet">ASL Alphabet</a>
@@ -22,6 +22,9 @@ return(
                     </article>
                 </section>
             </div>
+            <footer className="copyright-spacing">
+                <p className="copyright">&copy; 2020 Alston Drew Devero-Belfon. The Tri-Sense phrase and logo are trademarks of Alston Drew Devero-Belfon.</p>
+            </footer>
         </main>
     )
 }
