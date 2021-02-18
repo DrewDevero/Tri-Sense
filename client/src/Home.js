@@ -5,6 +5,7 @@ export default function Home() {
 const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
 
 return(
+        <div>
         <main>
             <div className="general-spacing site-background">
                 <header>
@@ -22,9 +23,10 @@ return(
                     </article>
                 </section>
             </div>
-            <footer className="copyright-spacing">
-                <p className="copyright">&copy; 2020 Alston Drew Devero-Belfon. The Tri-Sense phrase and logo are trademarks of Alston Drew Devero-Belfon.</p>
-            </footer>
         </main>
+        <footer className="copyright-spacing">
+                <p className="copyright">&copy; 2020 Alston Drew Devero-Belfon. The Tri-Sense phrase and logo are trademarks of Alston Drew Devero-Belfon.</p>
+        </footer>
+        </div>
     )
 }
