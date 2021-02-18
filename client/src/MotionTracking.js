@@ -68,9 +68,13 @@ useEffect(() => {
           ])
           const gesture = await gestureEstimate.estimate(landmarks, 1.0);
           if(gesture.gestures !== undefined && gesture.gestures.length > 0) {
+          const confidence = gesture.gestures.map((prediction) => prediction.confidence
+          );
+          const maxConfidence = confidence.indexOf(Math.max(...confidence)
+          );
           symbolSpacing.style.opacity = "1";
-          setSymbol(gesture.gestures[0].name);
-          console.log(gesture.gestures);
+          setSymbol(gesture.gestures[maxConfidence].name);
+          // console.log(gesture.gestures);
           }
         })();
       }
