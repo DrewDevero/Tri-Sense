@@ -25,7 +25,7 @@ return(
             </div>
         </main>
         <footer className="copyright-spacing">
-                <p className="copyright">&copy; 2020 Alston Drew Devero-Belfon. The Tri-Sense phrase and logo are trademarks of Alston Drew Devero-Belfon.</p>
+                <p className="copyright">&copy; 2021 Alston Drew Devero-Belfon. The Tri-Sense phrase and logo are trademarks of Alston Drew Devero-Belfon.</p>
         </footer>
         </div>
     )
