@@ -18,7 +18,7 @@ public class Symbol {
     private Boolean useOnlyOneHand;
 
     @Column
-    private Boolean palmFaceIn;
+    private Boolean palmStartFaceIn;
 
     @Column
     private String imageExample;
@@ -48,12 +48,12 @@ public class Symbol {
         this.useOnlyOneHand = useOnlyOneHand;
     }
 
-    public Boolean getPalmFaceIn() {
-        return palmFaceIn;
+    public Boolean getStartPalmFaceIn() {
+        return palmStartFaceIn;
     }
 
-    public void setPalmFaceIn(Boolean palmFaceIn) {
-        this.palmFaceIn = palmFaceIn;
+    public void setPalmStartFaceIn(Boolean palmStartFaceIn) {
+        this.palmStartFaceIn = palmStartFaceIn;
     }
 
     public String getImageExample() {

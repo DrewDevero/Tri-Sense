@@ -8,6 +8,14 @@ export default function Merriam() {
     const [displayWord, setDisplayWord] = useState(null);
     const [definition, setDefinition] = useState(null);
     const [pronunciationSource, setPronunciationSource] = useState("https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3");
+    const [postForm, setPostForm] = useState({
+        id : 1,
+        word: "apple",
+        partOfSpeech: "noun",
+        wordLength: 5,
+        pronunciation: "ap*ple",
+        pronunciationLink: "https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3"
+  });
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
     const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
@@ -36,6 +44,36 @@ export default function Merriam() {
 
     }, [])
 
+    useEffect(() => {
+        async function postWord() {
+            let wordExists = 0;
+            try {
+                const resTwo = await axios.get("http://localhost:8080/words");
+                resTwo.data.forEach((entry) => {
+                    if(entry.word === postForm.word) {
+                        wordExists++;   
+                    }
+                })
+            } catch(err) {
+                console.error(err);
+            }
+            if(wordExists === 0) {
+                try {
+                    axios.post("http://localhost:8080/words", postForm);
+                    const res = axios.get("http://localhost:8080/words");
+                    console.log(res.data);
+                    console.log(postForm);
+                } catch(err) {
+                    console.error(err);
+                } finally {
+                    console.log("Post attempt to database made");
+                }
+            }
+        }
+
+        postWord();
+
+    }, [postForm]);
 
     const handleChange = (e) => {
         setCurrentWord(e.target.value || "a");
@@ -50,7 +88,7 @@ export default function Merriam() {
                     })
                 console.log(res.data);
                 setDisplayWord(currentWord);
-                setDictionary({ word: res.data })
+                setDictionary({ word: res.data });
                 const changePronunciation = () => {
                 setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
                 setDefinition(JSON.stringify(res.data[0].def[0]))
@@ -60,11 +98,25 @@ export default function Merriam() {
                     }
                 }
                 changePronunciation();
+                // set words for post to http://localhost:8080/words
+                // word <string>
+                // partOfSpeech <string>
+                // wordLength <integer>
+                // pronunciation <string>
+                // pronunciationLink <string>
+                setPostForm({ 
+                    word: currentWord.toLowerCase(),
+                    partOfSpeech: dictionary.word[0].fl,
+                    wordLength: currentWord.length,
+                    pronunciation: dictionary.word[0].hwi.hw,
+                    pronunciationLink: pronunciationSource
+                 })
             } catch (err) {
                 console.error(err);
             } finally {
                 console.log("Another Merriam Webster Dictionary API GET call attempt was made")
             }
+                
         }
     }
 
