@@ -16,7 +16,7 @@ export default function Merriam() {
         pronunciation: "ap*ple",
         pronunciationLink: "https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3"
   });
-    const [wordBank, setWordBank] = useState(["Apple"]);
+    const [wordBank, setWordBank] = useState([] || "Apple");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
     const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
@@ -31,6 +31,10 @@ export default function Merriam() {
                     timeout: 2000,
                     })
                 console.log(res.data);
+            const res2 = await axios.get("http://localhost:8080/words");
+                    res2.data.forEach(entry => {
+                        setWordBank([...wordBank, entry.word ]);
+                    })
                 setDisplayWord("apple");
                 setDictionary({ word: res.data })
                 setDefinition(JSON.stringify(res.data[0].def[0]))
