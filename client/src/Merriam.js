@@ -16,6 +16,7 @@ export default function Merriam() {
         pronunciation: "ap*ple",
         pronunciationLink: "https://media.merriam-webster.com/audio/prons/en/us/mp3/a/apple001.mp3"
   });
+    const [wordBank, setWordBank] = useState({ word: "apple" });
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
     const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
@@ -60,7 +61,8 @@ export default function Merriam() {
             if(wordExists === 0) {
                 try {
                     axios.post("http://localhost:8080/words", postForm);
-                    const res = axios.get("http://localhost:8080/words");
+                    const res = await axios.get("http://localhost:8080/words");
+                    setWordBank({ ...wordBank, word: res.data[res.data.length-1].word });
                     console.log(res.data);
                     console.log(postForm);
                 } catch(err) {
@@ -137,6 +139,7 @@ export default function Merriam() {
                     onChange={ handleChange }
                     onSubmit={ handleSubmit }
                 >
+                    <label title="Word Bank" className="word-bank-spacing"><div className="word-bank"><button className="word-bank-button">word bank</button><div className="word-bank-content"><div>{ wordBank.word }</div></div></div></label>
                     <label title="Search Word"><input type="text" placeholder="search word" /></label>
                     <label title="Pronunciation Search"><input className="submit-word" type="submit" value="Click for Pronunciation" /></label>
                 </form>
