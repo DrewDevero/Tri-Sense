@@ -157,3 +157,41 @@
   text-transform: capitalize;
   cursor: pointer;
 }
+.word-bank-spacing {
+  display: flex;
+  justify-content: flex-end;
+}
+.word-bank {
+  text-transform: capitalize;
+  display: inline-block;
+  position: relative;
+}
+.word-bank-button {
+  background: rgba(23, 35, 235, 0.7);
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 8rem;
+}
+.word-bank-content {
+  text-transform: capitalize;
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background: rgba(140, 140, 140, 1);
+  width: 8rem;
+  box-shadow: 3px 3px 3px rgba(104, 104, 104, 0.2);
+}
+.word-bank-content > div {
+  display: block;
+}
+.word-bank-content > div:hover {
+  background: rgba(103, 110, 243, 1);
+}
+.word-bank:hover .word-bank-content {
+  display: block;
+}
+.word-bank:hover .word-bank-button {
+  background: rgba(23, 235, 35, 0.8);
+}
