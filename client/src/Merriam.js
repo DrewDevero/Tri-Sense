@@ -31,13 +31,13 @@ export default function Merriam() {
                     timeout: 2000,
                     })
                 console.log(res.data);
-            const res2 = await axios.get("http://localhost:8080/words");
-                    res2.data.forEach(entry => {
-                        setWordBank([...wordBank, entry.word ]);
-                    })
                 setDisplayWord("apple");
                 setDictionary({ word: res.data })
                 setDefinition(JSON.stringify(res.data[0].def[0]))
+            const res2 = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
+                    res2.data.forEach(entry => {
+                        setWordBank([...wordBank, entry.word ]);
+                    })
                 // setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
             } catch (err) {
                 console.error(err);
@@ -54,7 +54,7 @@ export default function Merriam() {
         async function postWord() {
             let wordExists = 0;
             try {
-                const resTwo = await axios.get("http://localhost:8080/words");
+                const resTwo = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
                 resTwo.data.forEach((entry) => {
                     if(entry.word === postForm.word) {
                         wordExists++;   
@@ -65,8 +65,8 @@ export default function Merriam() {
             }
             if(wordExists === 0) {
                 try {
-                    await axios.post("http://localhost:8080/words", postForm);
-                    const res = await axios.get("http://localhost:8080/words");
+                    await axios.post("https://tranquil-dawn-90579.herokuapp.com", postForm);
+                    const res = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
                     res.data.forEach(entry => {
                         setWordBank([...wordBank, entry.word ]);
                     })
@@ -110,7 +110,7 @@ export default function Merriam() {
                     }
                 }
                 changePronunciation();
-                // set words for post to http://localhost:8080/words
+                // set words for post to http://localhost:8080/words OR https://tranquil-dawn-90579.herokuapp.com
                 // word <string>
                 // partOfSpeech <string>
                 // wordLength <integer>
