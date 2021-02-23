@@ -60,7 +60,7 @@ export default function Merriam() {
             }
             if(wordExists === 0) {
                 try {
-                    axios.post("http://localhost:8080/words", postForm);
+                    await axios.post("http://localhost:8080/words", postForm);
                     const res = await axios.get("http://localhost:8080/words");
                     setWordBank({ ...wordBank, word: res.data[res.data.length-1].word });
                     console.log(res.data);
@@ -108,10 +108,10 @@ export default function Merriam() {
                 // pronunciationLink <string>
                 setPostForm({ 
                     word: currentWord.toLowerCase(),
-                    partOfSpeech: dictionary.word[0].fl,
+                    partOfSpeech: res.data[0].fl,
                     wordLength: currentWord.length,
-                    pronunciation: dictionary.word[0].hwi.hw,
-                    pronunciationLink: pronunciationSource
+                    pronunciation: res.data[0].hwi.hw,
+                    pronunciationLink: `https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`
                  })
             } catch (err) {
                 console.error(err);
