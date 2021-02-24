@@ -11,7 +11,7 @@
 - [x] Create a database using PostgreSQL
 - [x] Create model with table for users using Java
 - [x] Create model with table for words using Java
-- [x] Create model with table for ASL letters **A-Z** and number **0-9** using Java
+- [x] Create model with table for ASL letters **A-Z** and number **0-9** using Java and consuming the [HandSpeak API](https://www.handspeak.com)
 - [x] Generate CRUD capability using React and Java
 - [x] *Stretch Goal* Implement user accessable word bank that updates based on database information 
 
