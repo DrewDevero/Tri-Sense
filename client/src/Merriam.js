@@ -31,7 +31,6 @@ export default function Merriam() {
         const res = await axios.get(Merriam_URL + "apple" + API_KEY, {
                 timeout: 2000,
                 })
-            console.log(res.data);
             setDisplayWord("apple");
             setDictionary({ word: res.data })
             setDefinition(JSON.stringify(res.data[0].def[0]))
@@ -73,10 +72,6 @@ export default function Merriam() {
                     res.data.forEach(entry => {
                         setWordBank([...wordBank, entry.word ]);
                     })
-                    console.log(wordBank);
-                    console.log(savedWords);
-                    console.log(res.data);
-                    console.log(postForm);
                     return savedWords;
                 } catch(err) {
                     console.error(err);
@@ -91,7 +86,7 @@ export default function Merriam() {
     }, [postForm]);
 
     const handleChange = (e) => {
-        setCurrentWord(e.target.value || "a");
+        setCurrentWord(e.target.value.toLowerCase() || "a");
     }
 
     async function handleSubmit(e) {
@@ -102,7 +97,6 @@ export default function Merriam() {
                     timeout: 2000,
                     })
                 if(res.data[0].hwi.hw[0] === currentWord[0]) {
-                    console.log(res.data);
                     setDisplayWord(currentWord);
                     setDictionary({ word: res.data });
                     const changePronunciation = () => {
@@ -137,9 +131,8 @@ export default function Merriam() {
     }
 
     function selectFromBank(e) {
-        const selectedWord = e.target.value;
+        const selectedWord = e.target.value.toLowerCase();
         setCurrentWord(selectedWord);
-        console.log(currentWord)
     }
 
     function deselectFromBank() {
