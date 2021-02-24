@@ -7,7 +7,7 @@
 3rd level project(serious stretch goals)- relate live to American Sign Language alphabet, pull words from Merriam-Webster's Dictionary API and provide functionality to sign our words returned as audio and text (can scale back to written input only to still provide viable 1st level product(MVP) within the limited timeframe). Meant as the start of a much larger project; meant for submissions to initiatives like the [Google Developers Solution Challenge](https://developers.google.com/community/dsc-solution-challenge); initiatives that foster the growth of constructive projects with positive impacts.
 <br/>
 
-### Database Implementation (currently for local machine usage)
+### Database Implementation (Integrated with Heroku Deployment)
 - [x] Create a database using PostgreSQL
 - [x] Create model with table for users using Java
 - [x] Create model with table for words using Java
