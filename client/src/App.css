@@ -180,13 +180,19 @@
   display: none;
   z-index: 1;
   background: rgba(140, 140, 140, 1);
-  width: 8rem;
+  width: 100%;
   box-shadow: 3px 3px 3px rgba(104, 104, 104, 0.2);
 }
 .word-bank-content > div {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
-.word-bank-content > div:hover {
+.word-bank-content > div > input {
+  display: block;
+  width: 100%;
+  text-transform: capitalize;
+}
+.word-bank-content > div > input:hover {
   background: rgba(103, 110, 243, 1);
 }
 .word-bank:hover .word-bank-content {

@@ -23,28 +23,31 @@ export default function Merriam() {
     const pronounce = useRef();
     let savedWords;
 
-    useEffect(() => {
+    // for all database requests, http://localhost:8080/words for local host OR https://tranquil-dawn-90579.herokuapp.com/words for cloud host
 
-        async function GetEnglishWord() {
-            try {
-            const res = await axios.get(Merriam_URL + "apple" + API_KEY, {
-                    timeout: 2000,
-                    })
-                console.log(res.data);
-                setDisplayWord("apple");
-                setDictionary({ word: res.data })
-                setDefinition(JSON.stringify(res.data[0].def[0]))
-            const res2 = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
-                    res2.data.forEach(entry => {
-                        setWordBank([...wordBank, entry.word ]);
-                    })
-                // setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
-            } catch (err) {
-                console.error(err);
-            } finally {
-                console.log("An initial Merriam Webster Dictionary API GET call attempt was made")
-            }    
-        }
+
+    async function GetEnglishWord() {
+        try {
+        const res = await axios.get(Merriam_URL + "apple" + API_KEY, {
+                timeout: 2000,
+                })
+            console.log(res.data);
+            setDisplayWord("apple");
+            setDictionary({ word: res.data })
+            setDefinition(JSON.stringify(res.data[0].def[0]))
+        const res2 = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
+                const databaseWords = res2.data.map(entry => {
+                    return entry.word;
+                })
+                setWordBank(...wordBank, databaseWords)
+            // setDefinition(res.data[0].def[0].sseq[0][0][1].dt[0][1])
+        } catch (err) {
+            console.error(err);
+        } finally {
+            console.log("An initial Merriam Webster Dictionary API GET call attempt was made")
+        }    
+    }
+    useEffect(() => {
 
         GetEnglishWord();
 
@@ -54,7 +57,7 @@ export default function Merriam() {
         async function postWord() {
             let wordExists = 0;
             try {
-                const resTwo = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
+                const resTwo = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
                 resTwo.data.forEach((entry) => {
                     if(entry.word === postForm.word) {
                         wordExists++;   
@@ -65,8 +68,8 @@ export default function Merriam() {
             }
             if(wordExists === 0) {
                 try {
-                    await axios.post("https://tranquil-dawn-90579.herokuapp.com", postForm);
-                    const res = await axios.get("https://tranquil-dawn-90579.herokuapp.com");
+                    await axios.post("https://tranquil-dawn-90579.herokuapp.com/words", postForm);
+                    const res = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
                     res.data.forEach(entry => {
                         setWordBank([...wordBank, entry.word ]);
                     })
@@ -98,38 +101,49 @@ export default function Merriam() {
                 const res = await axios.get(Merriam_URL + currentWord + API_KEY, {
                     timeout: 2000,
                     })
-                console.log(res.data);
-                setDisplayWord(currentWord);
-                setDictionary({ word: res.data });
-                const changePronunciation = () => {
-                setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
-                setDefinition(JSON.stringify(res.data[0].def[0]))
-                    if(pronounce.current) {
-                        pronounce.current.pause();
-                        pronounce.current.load();
+                if(res.data[0].hwi.hw[0] === currentWord[0]) {
+                    console.log(res.data);
+                    setDisplayWord(currentWord);
+                    setDictionary({ word: res.data });
+                    const changePronunciation = () => {
+                    setPronunciationSource(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`);
+                    setDefinition(JSON.stringify(res.data[0].def[0]))
+                        if(pronounce.current) {
+                            pronounce.current.pause();
+                            pronounce.current.load();
+                        }
                     }
+                    changePronunciation();
+                    // set words for post to http://localhost:8080/words OR https://tranquil-dawn-90579.herokuapp.com/words
+                    // word <string>
+                    // partOfSpeech <string>
+                    // wordLength <integer>
+                    // pronunciation <string>
+                    // pronunciationLink <string>
+                    setPostForm({ 
+                        word: currentWord.toLowerCase(),
+                        partOfSpeech: res.data[0].fl,
+                        wordLength: currentWord.length,
+                        pronunciation: res.data[0].hwi.hw,
+                        pronunciationLink: `https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`
+                    })
                 }
-                changePronunciation();
-                // set words for post to http://localhost:8080/words OR https://tranquil-dawn-90579.herokuapp.com
-                // word <string>
-                // partOfSpeech <string>
-                // wordLength <integer>
-                // pronunciation <string>
-                // pronunciationLink <string>
-                setPostForm({ 
-                    word: currentWord.toLowerCase(),
-                    partOfSpeech: res.data[0].fl,
-                    wordLength: currentWord.length,
-                    pronunciation: res.data[0].hwi.hw,
-                    pronunciationLink: `https://media.merriam-webster.com/audio/prons/en/us/mp3/${res.data[0].hwi.prs[0].sound.audio[0]}/${res.data[0].hwi.prs[0].sound.audio}.mp3`
-                 })
             } catch (err) {
-                console.error(err);
+                console.error(err);     
             } finally {
                 console.log("Another Merriam Webster Dictionary API GET call attempt was made")
-            }
-                
+            }       
         }
+    }
+
+    function selectFromBank(e) {
+        const selectedWord = e.target.value;
+        setCurrentWord(selectedWord);
+        console.log(currentWord)
+    }
+
+    function deselectFromBank() {
+        setCurrentWord(null);
     }
 
     return(
@@ -149,10 +163,18 @@ export default function Merriam() {
                     onChange={ handleChange }
                     onSubmit={ handleSubmit }
                 >
-                    <label title="Word Bank" className="word-bank-spacing"><div className="word-bank"><button className="word-bank-button" type="button">word bank</button><div className="word-bank-content"> { wordBank.map((word, index) => { 
-                        return (
-                            <div key={ index }>{ word }</div> 
-                    )}) }</div></div></label>
+                    <label title="Word Bank" className="word-bank-spacing">
+                        <div className="word-bank">
+                            <button className="word-bank-button" type="button">word bank</button>
+                            <div className="word-bank-content"> { wordBank.map((word, index) => { 
+                                return (
+                                    <div key={ index }>
+                                        <input type="submit" value={ word } onMouseEnter={ selectFromBank } onMouseLeave={ deselectFromBank } ></input> 
+                                    </div>
+                                )
+                            }) }</div>
+                        </div>
+                    </label>
                     <label title="Search Word"><input type="text" placeholder="search word" /></label>
                     <label title="Pronunciation Search"><input className="submit-word" type="submit" value="Click for Pronunciation" /></label>
                 </form>
