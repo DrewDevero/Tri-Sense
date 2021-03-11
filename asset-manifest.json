@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Tri-Sense/static/css/main.3c6e452e.chunk.css",
-    "main.js": "/Tri-Sense/static/js/main.f7e3b3cd.chunk.js",
-    "main.js.map": "/Tri-Sense/static/js/main.f7e3b3cd.chunk.js.map",
+    "main.css": "/Tri-Sense/static/css/main.6e046389.chunk.css",
+    "main.js": "/Tri-Sense/static/js/main.e0ce3509.chunk.js",
+    "main.js.map": "/Tri-Sense/static/js/main.e0ce3509.chunk.js.map",
     "runtime-main.js": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js",
     "runtime-main.js.map": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js.map",
     "static/js/2.f7837553.chunk.js": "/Tri-Sense/static/js/2.f7837553.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.e104f92a.chunk.js": "/Tri-Sense/static/js/3.e104f92a.chunk.js",
     "static/js/3.e104f92a.chunk.js.map": "/Tri-Sense/static/js/3.e104f92a.chunk.js.map",
     "index.html": "/Tri-Sense/index.html",
-    "static/css/main.3c6e452e.chunk.css.map": "/Tri-Sense/static/css/main.3c6e452e.chunk.css.map",
+    "static/css/main.6e046389.chunk.css.map": "/Tri-Sense/static/css/main.6e046389.chunk.css.map",
     "static/js/2.f7837553.chunk.js.LICENSE.txt": "/Tri-Sense/static/js/2.f7837553.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5dfc7e92.js",
     "static/js/2.f7837553.chunk.js",
-    "static/css/main.3c6e452e.chunk.css",
-    "static/js/main.f7e3b3cd.chunk.js"
+    "static/css/main.6e046389.chunk.css",
+    "static/js/main.e0ce3509.chunk.js"
   ]
 }
