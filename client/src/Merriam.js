@@ -21,7 +21,10 @@ export default function Merriam() {
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
     const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
     const pronounce = useRef();
+    const WORD_BANK_CONTENT = document.querySelector(".word-bank-content");
+    const WORD_BANK_BUTTON = document.querySelector(".word-bank-button");
     let savedWords;
+    let wordBankToggled = false;
 
     // for all database requests, http://localhost:8080/words for local host OR https://obscure-woodland-21867.herokuapp.com/words for cloud host
 
@@ -139,6 +142,18 @@ export default function Merriam() {
         setCurrentWord(null);
     }
 
+    function toggleWordBank() {
+        if(!wordBankToggled) {
+            WORD_BANK_CONTENT.style.display = "block";
+            WORD_BANK_BUTTON.style.background = "rgba(23, 235, 35, 0.8)";
+            return wordBankToggled = true;
+        } else {
+            WORD_BANK_CONTENT.style.display = "none";
+            WORD_BANK_BUTTON.style.background = "rgba(23, 35, 235, 0.7)";
+            return wordBankToggled = false;
+        }
+    }
+
     return(
         <main>
 
@@ -158,7 +173,7 @@ export default function Merriam() {
                 >
                     <label title="Word Bank" className="word-bank-spacing">
                         <div className="word-bank">
-                            <button className="word-bank-button" type="button">word bank</button>
+                            <button className="word-bank-button" type="button" onClick={ toggleWordBank }>word bank</button>
                             <div className="word-bank-content"> { wordBank.map((word, index) => { 
                                 return (
                                     <div key={ index }>
