@@ -182,6 +182,7 @@
   background: rgba(140, 140, 140, 1);
   width: 100%;
   box-shadow: 3px 3px 3px rgba(104, 104, 104, 0.2);
+  overflow: scroll;
 }
 .word-bank-content > div {
   display: flex;
