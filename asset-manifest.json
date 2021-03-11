@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Tri-Sense/static/css/main.6e046389.chunk.css",
-    "main.js": "/Tri-Sense/static/js/main.e0ce3509.chunk.js",
-    "main.js.map": "/Tri-Sense/static/js/main.e0ce3509.chunk.js.map",
+    "main.js": "/Tri-Sense/static/js/main.c538fbbb.chunk.js",
+    "main.js.map": "/Tri-Sense/static/js/main.c538fbbb.chunk.js.map",
     "runtime-main.js": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js",
     "runtime-main.js.map": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js.map",
     "static/js/2.f7837553.chunk.js": "/Tri-Sense/static/js/2.f7837553.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5dfc7e92.js",
     "static/js/2.f7837553.chunk.js",
     "static/css/main.6e046389.chunk.css",
-    "static/js/main.e0ce3509.chunk.js"
+    "static/js/main.c538fbbb.chunk.js"
   ]
 }
