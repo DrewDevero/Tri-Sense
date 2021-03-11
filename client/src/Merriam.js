@@ -23,7 +23,7 @@ export default function Merriam() {
     const pronounce = useRef();
     let savedWords;
 
-    // for all database requests, http://localhost:8080/words for local host OR https://tranquil-dawn-90579.herokuapp.com/words for cloud host
+    // for all database requests, http://localhost:8080/words for local host OR https://obscure-woodland-21867.herokuapp.com/words for cloud host
 
 
     async function GetEnglishWord() {
@@ -34,7 +34,7 @@ export default function Merriam() {
             setDisplayWord("apple");
             setDictionary({ word: res.data })
             setDefinition(JSON.stringify(res.data[0].def[0]))
-        const res2 = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
+        const res2 = await axios.get("https://obscure-woodland-21867.herokuapp.com/words");
                 const databaseWords = res2.data.map(entry => {
                     return entry.word;
                 })
@@ -56,7 +56,7 @@ export default function Merriam() {
         async function postWord() {
             let wordExists = 0;
             try {
-                const resTwo = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
+                const resTwo = await axios.get("https://obscure-woodland-21867.herokuapp.com/words");
                 resTwo.data.forEach((entry) => {
                     if(entry.word === postForm.word) {
                         wordExists++;   
@@ -67,8 +67,8 @@ export default function Merriam() {
             }
             if(wordExists === 0) {
                 try {
-                    await axios.post("https://tranquil-dawn-90579.herokuapp.com/words", postForm);
-                    const res = await axios.get("https://tranquil-dawn-90579.herokuapp.com/words");
+                    await axios.post("https://obscure-woodland-21867.herokuapp.com/words", postForm);
+                    const res = await axios.get("https://obscure-woodland-21867.herokuapp.com/words");
                     res.data.forEach(entry => {
                         setWordBank([...wordBank, entry.word ]);
                     })
@@ -108,7 +108,7 @@ export default function Merriam() {
                         }
                     }
                     changePronunciation();
-                    // set words for post to http://localhost:8080/words OR https://tranquil-dawn-90579.herokuapp.com/words
+                    // set words for post to http://localhost:8080/words OR https://obscure-woodland-21867.herokuapp.com/words
                     // word <string>
                     // partOfSpeech <string>
                     // wordLength <integer>
