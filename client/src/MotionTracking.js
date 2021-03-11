@@ -167,8 +167,8 @@ useEffect(() => {
     onFrame: async () => {
       await hands.send({image: videoElement});
     },
-    height: "25rem",
-    width: "30rem"
+    height: "784",
+    width: "840"
   });
   camera.start();
 
