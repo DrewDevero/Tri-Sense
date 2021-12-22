@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Tri-Sense/static/css/main.c37a38b4.chunk.css",
-    "main.js": "/Tri-Sense/static/js/main.08c8de84.chunk.js",
-    "main.js.map": "/Tri-Sense/static/js/main.08c8de84.chunk.js.map",
-    "runtime-main.js": "/Tri-Sense/static/js/runtime-main.7a4382e0.js",
-    "runtime-main.js.map": "/Tri-Sense/static/js/runtime-main.7a4382e0.js.map",
-    "static/js/2.7242c3b5.chunk.js": "/Tri-Sense/static/js/2.7242c3b5.chunk.js",
-    "static/js/2.7242c3b5.chunk.js.map": "/Tri-Sense/static/js/2.7242c3b5.chunk.js.map",
-    "static/js/3.539d3fd6.chunk.js": "/Tri-Sense/static/js/3.539d3fd6.chunk.js",
-    "static/js/3.539d3fd6.chunk.js.map": "/Tri-Sense/static/js/3.539d3fd6.chunk.js.map",
+    "main.js": "/Tri-Sense/static/js/main.fed23a0c.chunk.js",
+    "main.js.map": "/Tri-Sense/static/js/main.fed23a0c.chunk.js.map",
+    "runtime-main.js": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js",
+    "runtime-main.js.map": "/Tri-Sense/static/js/runtime-main.5dfc7e92.js.map",
+    "static/js/2.f7837553.chunk.js": "/Tri-Sense/static/js/2.f7837553.chunk.js",
+    "static/js/2.f7837553.chunk.js.map": "/Tri-Sense/static/js/2.f7837553.chunk.js.map",
+    "static/js/3.e104f92a.chunk.js": "/Tri-Sense/static/js/3.e104f92a.chunk.js",
+    "static/js/3.e104f92a.chunk.js.map": "/Tri-Sense/static/js/3.e104f92a.chunk.js.map",
     "index.html": "/Tri-Sense/index.html",
     "static/css/main.c37a38b4.chunk.css.map": "/Tri-Sense/static/css/main.c37a38b4.chunk.css.map",
-    "static/js/2.7242c3b5.chunk.js.LICENSE.txt": "/Tri-Sense/static/js/2.7242c3b5.chunk.js.LICENSE.txt"
+    "static/js/2.f7837553.chunk.js.LICENSE.txt": "/Tri-Sense/static/js/2.f7837553.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7a4382e0.js",
-    "static/js/2.7242c3b5.chunk.js",
+    "static/js/runtime-main.5dfc7e92.js",
+    "static/js/2.f7837553.chunk.js",
     "static/css/main.c37a38b4.chunk.css",
-    "static/js/main.08c8de84.chunk.js"
+    "static/js/main.fed23a0c.chunk.js"
   ]
 }
