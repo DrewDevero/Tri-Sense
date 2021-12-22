@@ -4,7 +4,7 @@ import MotionTracking from "./MotionTracking";
 export default function ASL() {
 
 
-const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
+const ASL_Alphabet = "https://www.nidcd.nih.gov/sites/default/files/Content%20Images/NIDCD-ASL-hands-2019_large.jpg"
 
 return(
         <main>
