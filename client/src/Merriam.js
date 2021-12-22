@@ -19,7 +19,7 @@ export default function Merriam() {
     const [wordBank, setWordBank] = useState([] || "Apple");
     const Merriam_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
     const API_KEY = "?key=b6d6ef59-ebe9-4fb1-9e9b-970c1e954392";
-    const ASL_Alphabet = "https://www.nidcd.nih.gov/health/american-sign-language-fingerspelling-alphabets-image"
+    const ASL_Alphabet = "https://www.nidcd.nih.gov/sites/default/files/Content%20Images/NIDCD-ASL-hands-2019_large.jpg"
     const pronounce = useRef();
     const WORD_BANK_CONTENT = document.querySelector(".word-bank-content");
     const WORD_BANK_BUTTON = document.querySelector(".word-bank-button");
