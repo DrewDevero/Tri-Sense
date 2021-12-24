@@ -1,0 +1,26 @@
+<annotation>
+	<folder>3</folder>
+	<filename>label_3_13.jpg</filename>
+	<path>C:\Users\andwe\Desktop\Per_Scholas_Coursework\tri-sense\client\src\images\3\label_3_13.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>3</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>119</xmin>
+			<ymin>44</ymin>
+			<xmax>313</xmax>
+			<ymax>288</ymax>
+		</bndbox>
+	</object>
+</annotation>

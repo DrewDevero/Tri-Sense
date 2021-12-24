@@ -1,0 +1,26 @@
+<annotation>
+	<folder>s</folder>
+	<filename>label_s_5.jpg</filename>
+	<path>C:\Users\andwe\Desktop\Per_Scholas_Coursework\tri-sense\client\src\images\s\label_s_5.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>407</xmin>
+			<ymin>124</ymin>
+			<xmax>521</xmax>
+			<ymax>239</ymax>
+		</bndbox>
+	</object>
+</annotation>
