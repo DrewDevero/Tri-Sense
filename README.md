@@ -32,4 +32,5 @@ Finger Pose documentation and package: https://openbase.com/js/fingerpose/docume
 General connecting webcam to browser capability: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm
 General create files via javascript: https://code-boxx.com/create-save-files-javascript/
 LabelBox for image annotation to use in training and testing cases: https://app.labelbox.com/
+Tensorflow 2 Object Detection API tutorial: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
 Tensorflow object detection overview: https://github.com/nicknochnack/TFODCourse
